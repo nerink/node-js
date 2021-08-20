@@ -1,10 +1,12 @@
 // TODO: Include packages needed for this application
 const fs = require('fs');
 const inquirer = require('inquirer');
+const util = require('util');
+//const emailValidator = require('email-validator');
+const generateMarkdown = require('./Develop/generateMarkdown');
 
 // TODO: Create an array of questions for user input
-const questions = () =>{
-return inquirer.prompt([
+const questions = [
     {
         type:'input',
         name: 'Project Name',
@@ -19,6 +21,11 @@ return inquirer.prompt([
         }
     },
     {
+        type: "input",
+        name: "badge",
+        message: "Please provide the badges links:"
+    },
+    {
         type: 'input',
         name: 'description',
         message: 'Provide a description of the project (Required)',
@@ -27,19 +34,6 @@ return inquirer.prompt([
             return true;
           } else {
             console.log('You need to enter a project description!');
-            return false;
-          }
-        }
-    },
-    {
-        type: 'input',
-        name: 'tableofcontents',
-        message: 'Provide a table of contents ',
-        validate: tableofcontentsInput => {
-          if (tableofcontentsInput) {
-            return true;
-          } else {
-            console.log('You need to enter a Table of Contents!');
             return false;
           }
         }
@@ -71,6 +65,11 @@ return inquirer.prompt([
         }
     },
     {
+        type: "input",
+        name: "license",
+        message: "Please provide the project license:"
+    },
+    {
         type: 'input',
         name: 'test',
         message: 'Provide test instructions  ',
@@ -96,8 +95,17 @@ return inquirer.prompt([
           }
         }
     },
-])
-};
+    {
+        type: "input",
+        name: "username",
+        message: "What is your github user name?"
+    },
+    {
+        type: "input",
+        name: "email",
+        message: "What is your email address?"
+    }
+];
 
 
 // TODO: Create a function to write README file
@@ -112,9 +120,11 @@ function writeToFile(fileName, data) {
 };
 
 // TODO: Create a function to initialize app
-function init() {}
+function init() {
+    inquirer.prompt(questions).then(function (data) {
+        writeToFile("README.md", generateMarkdown(data));
+    })
+}
 
 // Function call to initialize app
 init();
-
-questions();
