@@ -1,8 +1,8 @@
 
-    # list1
-    ![License Badge](https://img.shields.io/github/license/test9/list2)
+    # Read Me Generator
+    ![License Badge](https://img.shields.io/github/license/nkaur/nkaur)
     ## Description
-    test
+    Generate a readme file dynamically
     ## Table of Contents
     * [Installation](#installation)
     * [Usage](#usage)
@@ -11,20 +11,20 @@
     * [Questions](#questions)
     * [License](#license)
     ## Installation
-    test3
+    N/A
     ## Usage
-    test5
+    N/A
     ## Contribution
-    test9
+    N/A
     ## Tests
-    test7
+    N/A
     ## Questions
-    * Checkout my [GitHub profile](https://github.com/test9)
+    * Checkout my [GitHub profile](https://github.com/nkaur)
     
-    * Any additional questions or feed back, feel free to [send an email](mailto:test19). 
+    * Any additional questions or feed back, feel free to [send an email](mailto:nerinkaur2@gmail.com). 
     ## License
-    Copyright (c) [test9](https://github.com/test9). All rights reserved.
+    Copyright (c) [nkaur](https://github.com/nkaur). All rights reserved.
     
-    Licensed under the test6 license.
+    Licensed under the MIT license license.
     
   
